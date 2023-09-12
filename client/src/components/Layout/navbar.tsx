@@ -182,7 +182,7 @@ const Navbar = ({ unread }: { unread: number }) => {
         </MyTooltip>
       )}
       <Language {...itemStyles} />
-      {feConfigs?.show_git && (
+      {/* {feConfigs?.show_git && (
         <MyTooltip label={`Git Star: ${gitStar}`} placement={'right-end'}>
           <Link
             as={NextLink}
@@ -195,7 +195,7 @@ const Navbar = ({ unread }: { unread: number }) => {
             <MyIcon name={'git'} width={'22px'} height={'22px'} />
           </Link>
         </MyTooltip>
-      )}
+      )} */}
     </Flex>
   );
 };

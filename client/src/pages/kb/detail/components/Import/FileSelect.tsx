@@ -2,12 +2,19 @@ import MyIcon from '@/components/Icon';
 import { useLoading } from '@/hooks/useLoading';
 import { useSelectFile } from '@/hooks/useSelectFile';
 import { useToast } from '@/hooks/useToast';
-import { fileDownload, readCsvContent, simpleText, splitText2Chunks } from '@/utils/file';
+import {
+  fileDownload,
+  readCsvContent,
+  simpleText,
+  splitText2Chunks,
+  readTxtContent,
+  readPdfContent,
+  readDocContent
+} from '@/utils/file';
 import { Box, Flex, useDisclosure, type BoxProps } from '@chakra-ui/react';
 import { fileImgs } from '@/constants/common';
 import { DragEvent, useCallback, useState } from 'react';
 import { useTranslation } from 'next-i18next';
-import { readTxtContent, readPdfContent, readDocContent } from '@/utils/file';
 import { customAlphabet } from 'nanoid';
 import dynamic from 'next/dynamic';
 import MyTooltip from '@/components/MyTooltip';
@@ -17,7 +24,7 @@ const UrlFetchModal = dynamic(() => import('./UrlFetchModal'));
 const CreateFileModal = dynamic(() => import('./CreateFileModal'));
 
 const nanoid = customAlphabet('abcdefghijklmnopqrstuvwxyz1234567890', 12);
-const csvTemplate = `question,answer,source\n"什么是 laf","laf 是一个云函数开发平台……","laf git doc"\n"什么是 sealos","Sealos 是以 kubernetes 为内核的云操作系统发行版,可以……","sealos git doc"`;
+const csvTemplate = `question,answer,source\n"什么是 knowchat","knowchat 是一个云函数开发平台……","knowchat git doc"`;
 
 export type FileItemType = {
   id: string;

@@ -1,7 +1,7 @@
 import { Box, Flex, Button, Image } from '@chakra-ui/react';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { feConfigs } from '@/store/static';
+// import { feConfigs } from '@/store/static';
 import { useGlobalStore } from '@/store/global';
 import MyIcon from '@/components/Icon';
 import { useRouter } from 'next/router';
@@ -22,7 +22,7 @@ const Hero = () => {
         {t('home.desc')}
       </Box>
       <Flex zIndex={1} flexDirection={['column', 'row']} mt={[5, 8]}>
-        {feConfigs?.show_git && (
+        {/* {feConfigs?.show_git && (
           <Button
             mr={[0, 5]}
             mb={[5, 0]}
@@ -43,7 +43,7 @@ const Hero = () => {
           >
             Stars {(gitStar / 1000).toFixed(1)}k
           </Button>
-        )}
+        )} */}
         <Button
           fontSize={['xl', '3xl']}
           h={['38px', 'auto']}
@@ -55,7 +55,7 @@ const Hero = () => {
           {t('home.Start Now')}
         </Button>
       </Flex>
-      <Box mt={['', '-50px']} position={'relative'}>
+      <Box mt={['', '50px']} position={'relative'}>
         <Image
           minH={['auto', '400px']}
           src={isPc ? '/imgs/home/videobgpc.png' : '/imgs/home/videobgphone.png'}
@@ -71,7 +71,7 @@ const Hero = () => {
           left={'50%'}
           top={'50%'}
           color={'#363c42b8'}
-          transform={['translate(-50%,5px)', 'translate(-50%,40px)']}
+          transform={['translate(-50%,5px)', 'translate(-50%,0px)']}
           onClick={() => {
             toast({
               title: '录制中~'

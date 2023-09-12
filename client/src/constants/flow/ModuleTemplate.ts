@@ -20,7 +20,7 @@ import { ContextExtractEnum, HttpPropsEnum } from './flowField';
 export const ChatModelSystemTip =
   '模型固定的引导词，通过调整该内容，可以引导模型聊天方向。该内容会被固定在上下文的开头。可使用变量，例如 {{language}}';
 export const ChatModelLimitTip =
-  '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"';
+  '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"';
 export const userGuideTip = '可以添加特殊的对话前后引导模块，更好的让用户进行对话';
 export const welcomeTextTip =
   '每次对话开始前，发送一个初始内容。支持标准 Markdown 语法，可使用的额外标记:\n[快捷按键]: 用户点击后可以直接发送该问题';
@@ -332,7 +332,7 @@ export const ClassifyQuestionModule: FlowModuleTemplateType = {
   name: '问题分类',
   intro: '可以判断用户问题属于哪方面问题，从而执行不同的操作。',
   description:
-    '根据用户的历史记录和当前问题判断该次提问的类型。可以添加多组问题类型，下面是一个模板例子：\n类型1: 打招呼\n类型2: 关于 laf 通用问题\n类型3: 关于 laf 代码问题\n类型4: 其他问题',
+    '根据用户的历史记录和当前问题判断该次提问的类型。可以添加多组问题类型，下面是一个模板例子：\n类型1: 打招呼\n类型2: 关于 knowchat 通用问题\n类型3: 关于 knowchat 代码问题\n类型4: 其他问题',
   flowType: FlowModuleTypeEnum.classifyQuestion,
   showStatus: true,
   inputs: [
@@ -344,7 +344,7 @@ export const ClassifyQuestionModule: FlowModuleTemplateType = {
       label: '系统提示词',
       description:
         '你可以添加一些特定内容的介绍，从而更好的识别用户的问题类型。这个内容通常是给模型介绍一个它不知道的内容。',
-      placeholder: '例如: \n1. Laf 是一个云函数开发平台……\n2. Sealos 是一个集群操作系统'
+      placeholder: '例如: \n1. knowchat 是一个云函数开发平台……\n2. Sealos 是一个集群操作系统'
     },
     Input_Template_History,
     Input_Template_UserChatInput,
@@ -667,9 +667,9 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             valueType: 'string',
             label: '限定词',
             description:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             placeholder:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             value: '',
             connected: true
           },
@@ -742,7 +742,7 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             key: 'welcomeText',
             type: 'input',
             label: '开场白',
-            value: '你好，我是 laf 助手，有什么可以帮助你的么？',
+            value: '你好，我是 knowchat 助手，有什么可以帮助你的么？',
             connected: true
           }
         ],
@@ -1015,9 +1015,9 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             valueType: 'string',
             label: '限定词',
             description:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             placeholder:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             value: '',
             connected: true
           },
@@ -1321,9 +1321,9 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             valueType: 'string',
             label: '限定词',
             description:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             placeholder:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             value: '将我的问题直接翻译成英语{{language}}',
             connected: true
           },
@@ -1479,9 +1479,9 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             label: '系统提示词',
             description:
               '你可以添加一些特定内容的介绍，从而更好的识别用户的问题类型。这个内容通常是给模型介绍一个它不知道的内容。',
-            placeholder: '例如: \n1. Laf 是一个云函数开发平台……\n2. Sealos 是一个集群操作系统',
+            placeholder: '例如: \n1. knowchat 是一个云函数开发平台……\n2. Sealos 是一个集群操作系统',
             value:
-              'laf 是云开发平台，可以快速的开发应用\nlaf 是一个开源的 BaaS 开发平台（Backend as a Service)\nlaf 是一个开箱即用的 serverless 开发平台\nlaf 是一个集「函数计算」、「数据库」、「对象存储」等于一身的一站式开发平台\nlaf 可以是开源版的腾讯云开发、开源版的 Google Firebase、开源版的 UniCloud',
+              'knowchat 是云开发平台，可以快速的开发应用\nknowchat 是一个开源的 BaaS 开发平台（Backend as a Service)\nknowchat 是一个开箱即用的 serverless 开发平台\nknowchat 是一个集「函数计算」、「数据库」、「对象存储」等于一身的一站式开发平台\nknowchat 可以是开源版的腾讯云开发、开源版的 Google Firebase、开源版的 UniCloud',
             connected: true
           },
           {
@@ -1509,7 +1509,7 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
                 key: 'fasw'
               },
               {
-                value: '“laf” 的问题',
+                value: '“knowchat” 的问题',
                 key: 'fqsw'
               },
               {
@@ -1589,7 +1589,7 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
           },
           {
             key: 'text',
-            value: '你好，我是 laf 助手，有什么可以帮助你的？',
+            value: '你好，我是 knowchat 助手，有什么可以帮助你的？',
             type: 'textarea',
             valueType: 'string',
             label: '回复的内容',
@@ -1618,7 +1618,7 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
           },
           {
             key: 'text',
-            value: '你好，我仅能回答 laf 相关问题，请问你有什么问题么？',
+            value: '你好，我仅能回答 knowchat 相关问题，请问你有什么问题么？',
             type: 'textarea',
             valueType: 'string',
             label: '回复的内容',
@@ -1696,7 +1696,7 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
               '模型固定的引导词，通过调整该内容，可以引导模型聊天方向。该内容会被固定在上下文的开头。可使用变量，例如 {{language}}',
             placeholder:
               '模型固定的引导词，通过调整该内容，可以引导模型聊天方向。该内容会被固定在上下文的开头。可使用变量，例如 {{language}}',
-            value: '知识库是关于 laf 的内容。',
+            value: '知识库是关于 knowchat 的内容。',
             connected: true
           },
           {
@@ -1705,11 +1705,11 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             valueType: 'string',
             label: '限定词',
             description:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             placeholder:
-              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 Laf 的介绍，参考知识库回答问题，与 "Laf" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
+              '限定模型对话范围，会被放置在本次提问前，拥有强引导和限定性。可使用变量，例如 {{language}}。引导例子:\n1. 知识库是关于 knowchat 的介绍，参考知识库回答问题，与 "knowchat" 无关内容，直接回复: "我不知道"。\n2. 你仅回答关于 "xxx" 的问题，其他问题回复: "xxxx"',
             value:
-              '我的问题都是关于 laf 的。根据知识库回答我的问题，与 laf 无关问题，直接回复：“我不清楚，我仅能回答 laf 相关的问题。”。',
+              '我的问题都是关于 knowchat 的。根据知识库回答我的问题，与 knowchat 无关问题，直接回复：“我不清楚，我仅能回答 knowchat 相关的问题。”。',
             connected: true
           },
           {
@@ -1930,7 +1930,7 @@ export const appTemplates: (AppItemType & { avatar: string; intro: string })[] =
             type: 'input',
             label: '开场白',
             value:
-              '你好，我是 laf 助手，有什么可以帮助你的？\n[laf 是什么？有什么用？]\n[laf 在线体验地址]\n[官网地址是多少]',
+              '你好，我是 knowchat 助手，有什么可以帮助你的？\n[knowchat 是什么？有什么用？]\n[knowchat 在线体验地址]\n[官网地址是多少]',
             connected: true
           }
         ],

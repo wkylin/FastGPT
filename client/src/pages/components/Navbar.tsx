@@ -106,9 +106,9 @@ const Navbar = () => {
                 {item.label}
               </Box>
             ))}
-            <Box px={4} color={'myGray.500'}>
+            {/* <Box px={4} color={'myGray.500'}>
               |
-            </Box>
+            </Box> */}
             <Box {...menuStyles} onClick={() => router.push('/login')}>
               {t('home.Login')}
             </Box>

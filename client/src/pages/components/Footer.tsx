@@ -9,69 +9,69 @@ import CommunityModal from '@/components/CommunityModal';
 const Footer = () => {
   const { t } = useTranslation();
   const router = useRouter();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const list = useMemo(
-    () => [
-      {
-        label: t('home.Footer Product'),
-        child: [
-          {
-            label: t('home.Footer FastGPT Cloud', { title: feConfigs.systemTitle }),
-            onClick: () => {
-              router.push('/app/list');
-            }
-          },
-          {
-            label: 'Sealos',
-            onClick: () => {
-              window.open('https://github.com/labring/sealos', '_blank');
-            }
-          },
-          {
-            label: 'Laf',
-            onClick: () => {
-              window.open('https://github.com/labring/laf', '_blank');
-            }
-          }
-        ]
-      },
-      {
-        label: t('home.Footer Developer'),
-        child: [
-          {
-            label: t('home.Footer Git'),
-            onClick: () => {
-              window.open('https://github.com/labring/FastGPT', '_blank');
-            }
-          },
-          {
-            label: t('home.Footer Docs'),
-            onClick: () => {
-              window.open('https://doc.fastgpt.run/docs/intro', '_blank');
-            }
-          }
-        ]
-      },
-      {
-        label: t('home.Footer Support'),
-        child: [
-          {
-            label: t('home.Footer Feedback'),
-            onClick: () => {
-              window.open('https://github.com/labring/FastGPT/issues', '_blank');
-            }
-          },
-          {
-            label: t('home.Community'),
-            onClick: () => {
-              onOpen();
-            }
-          }
-        ]
-      }
-    ],
-    [onOpen, t]
-  );
+  // const { isOpen, onOpen, onClose } = useDisclosure();
+  // const list = useMemo(
+  //   () => [
+  //     {
+  //       label: t('home.Footer Product'),
+  //       child: [
+  //         {
+  //           label: t('home.Footer FastGPT Cloud', { title: feConfigs.systemTitle }),
+  //           onClick: () => {
+  //             router.push('/app/list');
+  //           }
+  //         },
+  //         {
+  //           label: 'Sealos',
+  //           onClick: () => {
+  //             window.open('https://github.com/labring/sealos', '_blank');
+  //           }
+  //         },
+  //         {
+  //           label: 'Laf',
+  //           onClick: () => {
+  //             window.open('https://github.com/labring/laf', '_blank');
+  //           }
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       label: t('home.Footer Developer'),
+  //       child: [
+  //         {
+  //           label: t('home.Footer Git'),
+  //           onClick: () => {
+  //             window.open('https://github.com/labring/FastGPT', '_blank');
+  //           }
+  //         },
+  //         {
+  //           label: t('home.Footer Docs'),
+  //           onClick: () => {
+  //             window.open('https://doc.fastgpt.run/docs/intro', '_blank');
+  //           }
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       label: t('home.Footer Support'),
+  //       child: [
+  //         {
+  //           label: t('home.Footer Feedback'),
+  //           onClick: () => {
+  //             window.open('https://github.com/labring/FastGPT/issues', '_blank');
+  //           }
+  //         },
+  //         {
+  //           label: t('home.Community'),
+  //           onClick: () => {
+  //             onOpen();
+  //           }
+  //         }
+  //       ]
+  //     }
+  //   ],
+  //   [onOpen, t]
+  // );
 
   return (
     <Box
@@ -99,7 +99,7 @@ const Footer = () => {
           {t('home.FastGPT Desc', { title: feConfigs.systemTitle })}
         </Box>
       </Box>
-      {list.map((item) => (
+      {/* {list.map((item) => (
         <Box key={item.label} w={'200px'} mt={[5, 0]}>
           <Box color={'myGray.500'}>{item.label}</Box>
           {item.child.map((child) => (
@@ -115,7 +115,7 @@ const Footer = () => {
           ))}
         </Box>
       ))}
-      {isOpen && <CommunityModal onClose={onClose} />}
+      {isOpen && <CommunityModal onClose={onClose} />} */}
     </Box>
   );
 };

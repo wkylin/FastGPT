@@ -453,6 +453,14 @@ const ChatBox = (
     boxShadow: '0 0 8px rgba(0,0,0,0.15)'
   };
 
+  const NoMessageCardStyle: BoxProps = {
+    px: 4,
+    py: 3,
+    borderRadius: '8px',
+    boxShadow: '0 0 8px rgba(0,0,0,0.15)',
+    textAlign: 'center'
+  };
+
   const messageCardMaxW = ['calc(100% - 25px)', 'calc(100% - 40px)'];
 
   const showEmpty = useMemo(
@@ -513,7 +521,12 @@ const ChatBox = (
     <Flex flexDirection={'column'} h={'100%'}>
       <Box ref={ChatBoxRef} flex={'1 0 0'} h={0} w={'100%'} overflow={'overlay'} px={[4, 0]} pb={3}>
         <Box maxW={['100%', '92%']} h={'100%'} mx={'auto'}>
-          {showEmpty && <Empty />}
+          {/* {showEmpty && <Empty />} */}
+          {showEmpty && (
+            <Card order={2} mt={2} {...NoMessageCardStyle} bg={'white'} maxW={messageCardMaxW}>
+              开启新的会话...
+            </Card>
+          )}
 
           {!!welcomeText && (
             <Flex flexDirection={'column'} alignItems={'flex-start'} py={2}>
