@@ -80,7 +80,8 @@ const Ability = () => {
         mt={6}
         px={[5, 0]}
         minH={'400px'}
-        gridTemplateColumns={['1fr', `1fr 500px`]}
+        // gridTemplateColumns={['1fr', `1fr 500px`]}
+        gridTemplateColumns={['1fr']}
         gridGap={6}
       >
         <Box {...CardStyles} backgroundImage={'linear-gradient(to top, #6a85b6 0%, #bac8e0 100%)'}>
@@ -90,7 +91,7 @@ const Ability = () => {
           </Box>
           <Image src="/imgs/home/advanced_settings.png" alt={''} w={'100%'} />
         </Box>
-        <Box
+        {/* <Box
           {...CardStyles}
           pb={4}
           backgroundImage={'linear-gradient(to right, #FDCBB1 0%, #FEE5D8 100%)'}
@@ -98,7 +99,7 @@ const Ability = () => {
           <Box {...TitleStyles}>{t('home.OpenAPI')}</Box>
           <Box {...DescStyles}>{t('home.OpenAPI Desc')}</Box>
           <Image src="/imgs/home/openapi.png" alt={''} w={'90%'} mx={'auto'} borderRadius={'lg'} />
-        </Box>
+        </Box> */}
       </Grid>
     </Box>
   );
