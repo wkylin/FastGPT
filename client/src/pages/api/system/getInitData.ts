@@ -90,10 +90,8 @@ export async function getInitConfig() {
   try {
     if (global.feConfigs) return;
 
-    // const filename =
-    // process.env.NODE_ENV === 'development' ? 'data/config.local.json' : '/app/data/config.json';
     const filename =
-      process.env.NODE_ENV === 'development' ? 'data/config.local.json' : 'data/config.build.json';
+      process.env.NODE_ENV === 'development' ? 'data/config.local.json' : '/app/data/config.json';
     const res = JSON.parse(readFileSync(filename, 'utf-8'));
     console.log(res);
 
